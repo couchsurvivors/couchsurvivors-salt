@@ -27,7 +27,7 @@ docker_install:
       - docker-buildx-plugin
       - docker-compose-plugin
     - require:
-      - pkg: apt_update
+      - pkg: update_package_cache
 
 # Ensure Docker service is enabled and running
 docker_service:
