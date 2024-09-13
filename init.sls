@@ -63,7 +63,7 @@ docker_compose_directory:
 # Clone the Supabase repository
 supabase_repo:
   git.latest:
-    - name: https://github.com/supabase/supabase
+    - name: git@github.com:couchsurvivors/couchsurvivors-supabase.git
     - target: /opt/supabase
     - rev: master  # Specify a branch or tag
     - require:
