@@ -65,7 +65,7 @@ supabase_repo:
   git.latest:
     - name: git@github.com:couchsurvivors/couchsurvivors-supabase.git
     - target: /opt/supabase
-    - rev: master  # Specify a branch or tag
+    - rev: main
     - require:
       - file: docker_compose_directory
 
