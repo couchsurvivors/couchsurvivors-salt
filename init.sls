@@ -52,22 +52,12 @@ additional_packages:
       - tree
       - htop
 
-# Ensure the Docker Compose directory exists
-docker_compose_directory:
-  file.directory:
-    - name: /opt/supabase/docker
-    - user: root
-    - group: root
-    - mode: 0755
-
-# Clone the Supabase repository
+# Clone the Supabase repository and ensure /opt/supabase/docker exists
 supabase_repo:
   git.latest:
     - name: git@github.com:couchsurvivors/couchsurvivors-supabase.git
     - target: /opt/supabase
     - rev: main
-    - require:
-      - file: docker_compose_directory
 
 # Copy the .env.example to .env
 copy_env_file:
