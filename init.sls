@@ -13,9 +13,9 @@ docker_repository:
     - require:
       - file: docker_gpg_key
 
-# Update apt cache
-apt_update:
-  pkg.latest
+update_package_cache:
+  pkg.uptodate:
+    - refresh: True
 
 # Install Docker packages
 docker_install:
