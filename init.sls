@@ -4,6 +4,7 @@ docker_gpg_key:
     - name: /etc/apt/keyrings/docker.asc
     - source: https://download.docker.com/linux/debian/gpg
     - mode: 0644
+    - skip_verify: True
 
 # Add Docker repository to Apt sources
 docker_repository:
@@ -16,7 +17,7 @@ docker_repository:
 
 # Update apt cache
 apt_update:
-  pkg.refresh_db:
+  pkg.update: []
 
 # Install Docker packages
 docker_install:
@@ -66,7 +67,7 @@ supabase_repo:
   git.latest:
     - name: https://github.com/supabase/supabase
     - target: /opt/supabase
-    - depth: 1
+    - rev: master  # Specify a branch or tag
     - require:
       - file: docker_compose_directory
 
