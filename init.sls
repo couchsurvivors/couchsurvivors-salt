@@ -15,3 +15,11 @@ docker_group:
     - name: nougatbyte
     - groups:
       - docker
+      
+# Install additional packages
+additional_packages:
+  pkg.installed:
+    - pkgs:
+      - vim
+      - tree
+      - htop
