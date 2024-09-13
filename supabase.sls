@@ -27,7 +27,7 @@ copy_env_file:
 # Pull the latest Docker images
 pull_docker_images:
   cmd.run:
-    - name: docker compose pull
+    - name: docker-compose pull
     - cwd: /opt/supabase/docker
     - require:
       - cmd: copy_env_file
@@ -35,7 +35,7 @@ pull_docker_images:
 # Start Docker services in detached mode
 start_docker_services:
   cmd.run:
-    - name: docker compose up -d
+    - name: docker-compose up -d
     - cwd: /opt/supabase/docker
     - require:
       - cmd: pull_docker_images
