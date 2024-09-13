@@ -75,7 +75,7 @@ supabase_repo:
 copy_env_file:
   file.managed:
     - name: /opt/supabase/docker/.env
-    - source: salt:///opt/supabase/docker/.env.example
+    - source: /opt/supabase/docker/.env.example
     - require:
       - git: supabase_repo
 
