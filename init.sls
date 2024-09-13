@@ -17,7 +17,7 @@ docker_repository:
 
 # Update apt cache
 apt_update:
-  pkg.update: []
+  pkg.update
 
 # Install Docker packages
 docker_install:
