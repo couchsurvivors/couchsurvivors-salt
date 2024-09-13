@@ -6,12 +6,10 @@ docker_gpg_key:
     - mode: 0644
     - skip_verify: True
 
-# Add Docker repository to Apt sources
+# Generate Docker repository file
 docker_repository:
-  file.managed:
-    - name: /etc/apt/sources.list.d/docker.list
-    - contents: |
-        deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(lsb_release -cs) stable
+  cmd.run:
+    - name: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
     - require:
       - file: docker_gpg_key
 
