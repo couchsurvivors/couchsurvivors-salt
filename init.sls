@@ -58,6 +58,7 @@ supabase_repo:
     - name: git@github.com:couchsurvivors/couchsurvivors-supabase.git
     - target: /opt/supabase
     - rev: main
+    - force_clone: True
 
 # Copy the .env.example to .env
 copy_env_file:
