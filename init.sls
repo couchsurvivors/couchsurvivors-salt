@@ -59,6 +59,7 @@ supabase_repo:
     - target: /opt/supabase
     - rev: main
     - force_clone: True
+    - force_fetch: True
 
 # Copy the .env.example to .env
 copy_env_file:
