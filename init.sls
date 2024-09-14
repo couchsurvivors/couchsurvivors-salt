@@ -13,6 +13,7 @@ docker_repository:
     - require:
       - file: docker_gpg_key
 
+# Update package cache
 update_package_cache:
   pkg.uptodate:
     - refresh: True
