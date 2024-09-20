@@ -52,6 +52,8 @@ additional_packages:
       - vim
       - tree
       - htop
+      - btop
+      - wget
 
 # Clone the Supabase repository and ensure /opt/supabase/docker exists
 supabase_repo:
